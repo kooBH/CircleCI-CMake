@@ -16,11 +16,7 @@ jobs:
 
       - run:
           name: build
-          command: |
-          mkdir build
-          cd build
-          cmake
-          make
+          command: mkdir build && cd build && cmake .. && make
       - run:
           name: run
           command: ./build/hello_world
