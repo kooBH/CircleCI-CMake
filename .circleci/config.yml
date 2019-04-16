@@ -8,8 +8,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: build
+          name: cmake
           command: cmake ..
+      - run:
+          name: make
           command: make
 
       - run:
