@@ -8,18 +8,15 @@ jobs:
     steps:
       - checkout
       #      - run:
-      #    name: create build
-      #    command: mkdir build
-      # - run:
-      #    name: move to build
-      #    command: cd build
-      - run:
-          name: cmake
-          command: cmake .
-      - run:
-          name: make
-          command: make
+      #    name: cmake
+      #    command: cmake .
+      #- run:
+      #    name: make
+      #    command: make
 
       - run:
+          name: build
+          command: mkdir build && cd build && cmake .. && make
+      - run:
           name: run
-          command: ./hello_world
+          command: ./build/hello_world
