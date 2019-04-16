@@ -2,15 +2,16 @@ version: 2
 jobs:
   build:
     docker:
-      - image: debian:stretch
+      - image: ubuntu:16.04
+    working_directory: /build
 
     steps:
       - checkout
+      - run:
+          name: build
+          command: cmake ..
+          command: make
 
       - run:
-          name: Greeting
-          command: echo Hello, world.
-
-      - run:
-          name: Print the Current Time
-          command: date
+          name: run
+          command: ./hello_world
